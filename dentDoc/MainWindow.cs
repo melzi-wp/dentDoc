@@ -10,17 +10,22 @@ namespace dentDoc
     {
         public MainWindow()
         {
-            InitializeComponent();
+            
         }
 
-        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
+    
+
+   
+
+        private void AddPatientBtn(object sender, RoutedEventArgs e)
         {
+            AddPatient addPatient = new();
+
+            addPatient.Show();
+           
+
 
         }
 
-        private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-
-        }
     }
 }
