@@ -47,29 +47,40 @@
                 <TextBlock Grid.Row="0" Text="Nom" Style="{StaticResource text}"/>
                 <TextBlock Grid.Row="1" Text="Prénom" Style="{StaticResource text}"/>
                 <TextBlock Grid.Row="2" Text="Date de naissance" Style="{StaticResource text}"/>
-                <TextBlock Grid.Row="3" Text="Sex" Style="{StaticResource text}"/>
-                <TextBlock Grid.Row="4" Text="N° telephone" Style="{StaticResource text}"/>
+                <TextBlock Grid.Row="3" Text="Sexe" Style="{StaticResource text}"/>
+                <TextBlock Grid.Row="4" Text="N° téléphone" Style="{StaticResource text}"/>
                 <TextBlock Grid.Row="5" Text="Adresse" Style="{StaticResource text}"/>
                 <TextBlock Grid.Row="6" Text="N° SS" Style="{StaticResource text}"/>
 
                 <TextBox Grid.Row="0" Grid.Column="1" x:Name="txtNom" Style="{StaticResource textboxAddPatient}"/>
                 <TextBox Grid.Row="1" Grid.Column="1" x:Name="txtPrenom" Style="{StaticResource textboxAddPatient}"/>
-                <DatePicker Grid.Row="2" Grid.Column="1"  SelectedDate="01/01/2010" Padding="30 8 40 0" Width="200" Height="35" BorderBrush="Transparent" Background="White" Margin="10 10 0 10"/>
                 
-                <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1">
-                        <Icon:PackIconMaterial Kind="HumanMale"  Height="20" Margin="20 0 0 0" HorizontalAlignment="Center"
-                                               VerticalAlignment="Center" Background="Transparent"/>
-                        <RadioButton GroupName="CharacterGender" Content="Male" HorizontalAlignment="Center" 
+                <Border Grid.Row="2" Grid.Column="1" CornerRadius="20" Background="White" Width="200" Height="35" 
+                        Margin="10 10 0 10" BorderBrush="#e0e6ed" BorderThickness="1">
+                    
+                    <DatePicker Grid.Row="2" Grid.Column="1"  SelectedDate="01/01/2010" Padding="30 8 40 0" 
+                                BorderBrush="Transparent" Background="Transparent"/>
+                </Border>
+
+                <Border Grid.Row="3" Grid.Column="1" CornerRadius="20" Background="White" Width="200" Height="35" 
+                        Margin="10 10 0 10" BorderBrush="#e0e6ed" BorderThickness="1">
+                    <StackPanel Orientation="Horizontal">
+                        
+                        <RadioButton GroupName="CharacterGender" Content="Male" HorizontalAlignment="Center" Margin="10 0 0 0"
                                      VerticalAlignment="Center" FontSize="14" FontWeight="Medium" Background="Transparent"
                                      BorderBrush="Transparent" />
-                        
-                        <Icon:PackIconMaterial Kind="HumanFemale"  Height="20" Margin="20 0 0 0" HorizontalAlignment="Center"
-                                               VerticalAlignment="Center" Background="Transparent" />
+                        <Icon:PackIconMaterial Kind="HumanMale"  Height="20" Margin="0 0 10 0" HorizontalAlignment="Center"
+                                               VerticalAlignment="Center" Background="Transparent"/>
+
                         <RadioButton GroupName="CharacterGender" Content="Female" HorizontalAlignment="Center" 
                                      VerticalAlignment="Center" FontSize="14" FontWeight="Medium" Background="Transparent"
                                      BorderBrush="Transparent" />
+                        <Icon:PackIconMaterial Kind="HumanFemale"  Height="20" Margin="0 0 10 0" HorizontalAlignment="Center"
+                                VerticalAlignment="Center" Background="Transparent" />
 
-                </StackPanel>
+                    </StackPanel>
+                </Border>
+                
                 
                 <TextBox Grid.Row="4" Grid.Column="1"  x:Name="txtTelephone" Style="{StaticResource textboxAddPatient}"/>
                 <TextBox Grid.Row="5" Grid.Column="1" x:Name="txtAdresse" Style="{StaticResource textboxAddPatient}"/>
