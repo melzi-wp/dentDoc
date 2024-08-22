@@ -434,7 +434,7 @@
         </Style>
 
         <Style x:Key="textboxAddPatient" TargetType="TextBox" BasedOn="{StaticResource textboxSearch}">
-            <Setter Property="Padding" Value="10 7"/>
+            <Setter Property="Padding" Value="15 7"/>
             <Setter Property="Margin" Value="10 10 0 10"/>
             <Setter Property="Width" Value="200"/>
             <Setter Property="Height" Value="35"/>
@@ -458,6 +458,47 @@
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
+        </Style>
+
+        <Style x:Key="ButtonSave" TargetType="Button">
+            <Setter Property="Background" Value="#335fff"/>
+            <Setter Property="Foreground" Value="#ffffff" />
+            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+            <Setter Property="Width" Value="110"/>
+            <Setter Property="Height" Value="35" />
+            <Setter Property="Margin" Value="25 0 0 0"/>
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Template" >
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="15">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            
+
+        </Style>
+
+        <Style x:Key="ButtonCancel" TargetType="Button">
+            <Setter Property="Background" Value="#ffffff"/>
+            <Setter Property="Foreground" Value="#335fff" />
+            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+            <Setter Property="Width" Value="110"/>
+            <Setter Property="Height" Value="35" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Template" >
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="15">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+
         </Style>
 
 

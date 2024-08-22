@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <None Remove="Images\dentdoc-logo.PNG" />
+    <None Remove="Images\patientIcon.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,6 +20,9 @@
   <ItemGroup>
     <Resource Include="Images\dentdoc-logo.PNG">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\patientIcon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
 

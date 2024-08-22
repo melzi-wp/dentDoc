@@ -1,7 +1,4 @@
-﻿using System.Collections.ObjectModel;
-using System.Windows;
-using System.Windows.Input;
-using System.Windows.Media;
+﻿using System.Windows;
 
 
 namespace dentDoc
@@ -10,20 +7,25 @@ namespace dentDoc
     {
         public MainWindow()
         {
-            
+            InitializeComponent();
         }
 
     
-
-   
-
         private void AddPatientBtn(object sender, RoutedEventArgs e)
         {
             AddPatient addPatient = new();
 
-            addPatient.Show();
-           
+           addPatient.Show();
 
+           
+        }
+        private void PatientProfilBtn(object sender, RoutedEventArgs e)
+        {
+            PatientProfil patientProfil = new();
+
+
+            patientProfil.ShowDialog();
+        
 
         }
 
