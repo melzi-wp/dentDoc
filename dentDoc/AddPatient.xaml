@@ -46,7 +46,7 @@
 
                 <TextBlock Grid.Row="0" Text="Nom" Style="{StaticResource text}"/>
                 <TextBlock Grid.Row="1" Text="Prénom" Style="{StaticResource text}"/>
-                <TextBlock Grid.Row="2" Text="Date de naissance" Style="{StaticResource text}"/>
+                <TextBlock Grid.Row="2" Text="Date_de_naissance" Style="{StaticResource text}"/>
                 <TextBlock Grid.Row="3" Text="Sexe" Style="{StaticResource text}"/>
                 <TextBlock Grid.Row="4" Text="N° téléphone" Style="{StaticResource text}"/>
                 <TextBlock Grid.Row="5" Text="Adresse" Style="{StaticResource text}"/>
@@ -58,7 +58,7 @@
                 <Border Grid.Row="2" Grid.Column="1" CornerRadius="20" Background="White" Width="200" Height="35" 
                         Margin="10 10 0 10" BorderBrush="#e0e6ed" BorderThickness="1">
                     
-                    <DatePicker Grid.Row="2" Grid.Column="1"  SelectedDate="01/01/2010" Padding="30 8 40 0" 
+                    <DatePicker Grid.Row="2" Grid.Column="1" Text="txtDateNaissence" SelectedDate="01/01/2010" Padding="30 8 40 0" 
                                 BorderBrush="Transparent" Background="Transparent"/>
                 </Border>
 
@@ -91,13 +91,13 @@
             <!--bottons section-->
             <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 0 25"  >
                
-                <Button    Style="{StaticResource ButtonCancel}">
+                <Button Click="AnnuleAddPatientBtn" Style="{StaticResource ButtonCancel}">
                     <StackPanel Orientation="Horizontal">
                         <Icon:PackIconMaterial Kind="Cancel" Foreground="red" Style="{StaticResource ButtonAddIcon}"/>
                         <TextBlock Text="Annuler"/>
                     </StackPanel>
                 </Button>
-                <Button Style="{StaticResource ButtonSave}">
+                <Button Click="SaveBtn" Style="{StaticResource ButtonSave}">
                     <StackPanel Orientation="Horizontal">
                         <Icon:PackIconMaterial Kind="ContentSave" Foreground="#5ce65c" Style="{StaticResource ButtonAddIcon}"/>
                         <TextBlock Text="Enregistrer"/>

@@ -21,6 +21,9 @@
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
 
+            <Image Source="/Images/close.png" Grid.Column="0" Panel.ZIndex="1" MouseUp="Image_MouseUp"  Style="{StaticResource imgClose}"/>
+
+
             <!--profil row-->
             <Border  Padding="15" Margin="10 30 10 0"
                     Background="#4895ef" CornerRadius="15"  >

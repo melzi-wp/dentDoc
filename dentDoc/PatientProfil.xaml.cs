@@ -26,6 +26,13 @@ namespace dentDoc
 
         }
 
+        private void Image_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            
+            Close();
+
+        }
+
         private void AddSienceBtn(object sender, RoutedEventArgs e)
         {
             AddSience addSience = new();
