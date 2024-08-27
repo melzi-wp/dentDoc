@@ -200,6 +200,7 @@
             <Setter Property="Background" Value="#335fff"/>
             <Setter Property="BorderBrush" Value="#338ccc"/>
             <Setter Property="Foreground" Value="#ffffff" />
+            <Setter Property="Margin" Value="0 0 5 0"/>
             <Setter Property="FocusVisualStyle" Value="{x:Null}" />
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="Template" >

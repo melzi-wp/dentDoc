@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static dentDoc.MainWindow;
 
 namespace dentDoc
 {
@@ -20,34 +21,46 @@ namespace dentDoc
     /// </summary>
     public partial class AddPatient : Window
     {
+    
+
+
         public AddPatient()
         {
             InitializeComponent();
         }
-
         
         private void SaveBtn(object sender, RoutedEventArgs e)
         {
             string connectionString = "Server=localhost;Port=5432;Database=dental_clinic;Username=postgres;Password=123456;";
-            string nom = txtNom.Text;
-            string prenom = txtPrenom.Text;
-            //string dateNaissence = txtDateNaissence.text;
+            string Nom = txtNom.Text;
+            string Prenom = txtPrenom.Text;
+            MainWindow mainWindow = new();
+          
+            DateTime? DateNaissance = txtDateNaissance.SelectedDate;
+            string Telephone = txtTelephone.Text;
             // ... autres informations du patient
 
             using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
             {
                 connection.Open();
-                string sql = "INSERT INTO Patient (nom, prenom, ...) VALUES (@nom, @prenom, ...)";
+               
+                string sql = "INSERT INTO patient (nom, prenom,date_de_naissance, n_telephone) VALUES (@nom, @prenom,  @date_de_naissance, @n_telephone)";
                 using (NpgsqlCommand command = new NpgsqlCommand(sql, connection))
                 {
-                    command.Parameters.AddWithValue("@nom", nom);
-                    command.Parameters.AddWithValue("@prenom", prenom);
+                    command.Parameters.AddWithValue("@nom", Nom);
+                    command.Parameters.AddWithValue("@prenom", Prenom);
+                    command.Parameters.AddWithValue("@date_de_naissance", DateNaissance);
+                    command.Parameters.AddWithValue("@n_telephone", Telephone);
+                    
                     // ... autres paramètres
 
                     int rowsAffected = command.ExecuteNonQuery();
+                    
                     if (rowsAffected > 0)
                     {
                         MessageBox.Show("Patient ajouté avec succès !");
+                        Close();
+                        
                     }
                     else
                     {

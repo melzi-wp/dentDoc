@@ -170,13 +170,13 @@
                     </Grid>
                     
                     <!--Patients Datagrid -->
-                    <DataGrid Style="{DynamicResource DataGridStyle1}" 
+                    <DataGrid x:Name="patientsDataGrid"
+                              Style="{DynamicResource DataGridStyle1}" 
                               CellStyle="{DynamicResource DataGridCellStyle1}"
                               ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}"
                               RowStyle="{DynamicResource DataGridRowStyle1}" 
                               Grid.Row="5"
-                              Margin="0 10 0 0"
-                              x:Name="patientsDataGrid">
+                              Margin="0 10 0 0">
 
                         <DataGrid.Columns>
                             <DataGridCheckBoxColumn CanUserResize="false"  Width="auto" >
@@ -189,21 +189,22 @@
 
                             <DataGridTextColumn Header="#" IsReadOnly="True" CanUserResize="False" Width="auto"/>
 
-                            <DataGridTemplateColumn Header="Patient" IsReadOnly="True" Width="*">
-                                <DataGridTemplateColumn.CellTemplate>
+                            <DataGridTemplateColumn Header="Patient"  IsReadOnly="True" Width="*">
+                                <DataGridTemplateColumn.CellTemplate >
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal">
-                                            <Border Width="25" Height="25" CornerRadius="50" Margin="0 0 10 0" Background="Red">
-                                                <TextBlock Text="..." VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" Margin="0 0 0 1"/>                                                
+                                            <Border  Height="25" CornerRadius="50" Margin="0 0 10 0" >
+                                                <TextBlock Text="{Binding Nom, Mode=TwoWay}" VerticalAlignment="Center"
+                                                           HorizontalAlignment="Center"  Margin="0 0 0 1"/>                                                
                                             </Border>
 
-                                            <TextBlock Text="..." VerticalAlignment="Center"/>
+                                            <TextBlock Text="{Binding Prenom, Mode=TwoWay}" VerticalAlignment="Center"/>
                                         </StackPanel>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>                                
                             </DataGridTemplateColumn>
 
-                            <DataGridTextColumn Header="N° Téléphone"  IsReadOnly="True" CanUserResize="False" Width="*"/>
+                            <DataGridTextColumn Header="N° Téléphone" Binding="{Binding NumeroTelephone}" IsReadOnly="True" CanUserResize="False" Width="*"/>
                             <DataGridTextColumn Header="Adresse" IsReadOnly="True" CanUserResize="False" Width="*"/>
                             <DataGridTextColumn Header="Position" IsReadOnly="True" CanUserResize="False" Width="*"/>
 

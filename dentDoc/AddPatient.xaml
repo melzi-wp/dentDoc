@@ -58,7 +58,7 @@
                 <Border Grid.Row="2" Grid.Column="1" CornerRadius="20" Background="White" Width="200" Height="35" 
                         Margin="10 10 0 10" BorderBrush="#e0e6ed" BorderThickness="1">
                     
-                    <DatePicker Grid.Row="2" Grid.Column="1" Text="txtDateNaissence" SelectedDate="01/01/2010" Padding="30 8 40 0" 
+                    <DatePicker Grid.Row="2" Grid.Column="1" x:Name="txtDateNaissance" SelectedDate="01/01/2010" Padding="30 8 40 0" 
                                 BorderBrush="Transparent" Background="Transparent"/>
                 </Border>
 
