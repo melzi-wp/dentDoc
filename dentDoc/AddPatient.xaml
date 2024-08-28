@@ -46,23 +46,24 @@
 
                 <TextBlock Grid.Row="0" Text="Nom" Style="{StaticResource text}"/>
                 <TextBlock Grid.Row="1" Text="Prénom" Style="{StaticResource text}"/>
-                <TextBlock Grid.Row="2" Text="Date_de_naissance" Style="{StaticResource text}"/>
-                <TextBlock Grid.Row="3" Text="Sexe" Style="{StaticResource text}"/>
-                <TextBlock Grid.Row="4" Text="N° téléphone" Style="{StaticResource text}"/>
-                <TextBlock Grid.Row="5" Text="Adresse" Style="{StaticResource text}"/>
-                <TextBlock Grid.Row="6" Text="N° SS" Style="{StaticResource text}"/>
-
+                <TextBlock Grid.Row="2" Text="Age" Style="{StaticResource text}"/>
+                <TextBlock Grid.Row="3" Text="Date_de_naissance" Style="{StaticResource text}"/>
+                <TextBlock Grid.Row="4" Text="Sexe" Style="{StaticResource text}"/>
+                <TextBlock Grid.Row="5" Text="N° téléphone" Style="{StaticResource text}"/>
+                <TextBlock Grid.Row="6" Text="Adresse" Style="{StaticResource text}"/>
+                
                 <TextBox Grid.Row="0" Grid.Column="1" x:Name="txtNom" Style="{StaticResource textboxAddPatient}"/>
                 <TextBox Grid.Row="1" Grid.Column="1" x:Name="txtPrenom" Style="{StaticResource textboxAddPatient}"/>
+                <TextBox Grid.Row="2" Grid.Column="1" x:Name="txtAge" Style="{StaticResource textboxAddPatient}" />
                 
-                <Border Grid.Row="2" Grid.Column="1" CornerRadius="20" Background="White" Width="200" Height="35" 
+                <Border Grid.Row="3" Grid.Column="1" CornerRadius="20" Background="White" Width="200" Height="35" 
                         Margin="10 10 0 10" BorderBrush="#e0e6ed" BorderThickness="1">
                     
-                    <DatePicker Grid.Row="2" Grid.Column="1" x:Name="txtDateNaissance" SelectedDate="01/01/2010" Padding="30 8 40 0" 
+                    <DatePicker  x:Name="txtDateNaissance" SelectedDate="01/01/2010" Padding="30 8 40 0" 
                                 BorderBrush="Transparent" Background="Transparent"/>
                 </Border>
 
-                <Border Grid.Row="3" Grid.Column="1" CornerRadius="20" Background="White" Width="200" Height="35" 
+                <Border Grid.Row="4" Grid.Column="1" CornerRadius="20" Background="White" Width="200" Height="35" 
                         Margin="10 10 0 10" BorderBrush="#e0e6ed" BorderThickness="1">
                     <StackPanel Orientation="Horizontal">
                         
@@ -82,9 +83,9 @@
                 </Border>
                 
                 
-                <TextBox Grid.Row="4" Grid.Column="1"  x:Name="txtTelephone" Style="{StaticResource textboxAddPatient}"/>
-                <TextBox Grid.Row="5" Grid.Column="1" x:Name="txtAdresse" Style="{StaticResource textboxAddPatient}"/>
-                <TextBox Grid.Row="6" Grid.Column="1" x:Name="txtSS" Style="{StaticResource textboxAddPatient}" />
+                <TextBox Grid.Row="5" Grid.Column="1"  x:Name="txtTelephone" Style="{StaticResource textboxAddPatient}"/>
+                <TextBox Grid.Row="6" Grid.Column="1" x:Name="txtAdresse" Style="{StaticResource textboxAddPatient}"/>
+                
                 
             </Grid> 
             
