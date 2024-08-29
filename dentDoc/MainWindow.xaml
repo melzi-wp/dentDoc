@@ -192,9 +192,9 @@
                               Grid.Row="5"
                               Margin="0 10 0 0">
 
-                        <DataGrid.Columns>
+                        <DataGrid.Columns >
 
-                            
+
                             <DataGridCheckBoxColumn CanUserResize="false"  Width="auto" >
                                 <DataGridCheckBoxColumn.HeaderTemplate>
                                     <DataTemplate>
@@ -205,7 +205,7 @@
 
                             <DataGridTextColumn  Header="#" Binding="{Binding Id, Mode=TwoWay}" IsReadOnly="True" CanUserResize="False" Width="auto" />
                              
-
+                            
                             <DataGridTemplateColumn Header="Patient" IsReadOnly="True" Width="*">
                                 <DataGridTemplateColumn.CellTemplate >
                                     <DataTemplate>
@@ -232,6 +232,11 @@
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal">
+
+                                            <Button   Style="{StaticResource gridEditButton}" Click="ShowPatientProfileBtn_Click">
+                                                <Icon:PackIconMaterial Kind="Eye" Style="{StaticResource gridButtonIcon}"/>
+                                            </Button>
+
                                             <Button Style="{StaticResource gridEditButton}">
                                                 <Icon:PackIconMaterial Kind="PencilOutline" Style="{StaticResource gridButtonIcon}"/>
                                             </Button>

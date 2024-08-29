@@ -2,8 +2,10 @@
 using System.Data;
 using System.Globalization;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Input;
+using static dentDoc.PatientProfil;
 
 
 namespace dentDoc
@@ -23,6 +25,7 @@ namespace dentDoc
             public float Id { get; set; }
             public string Nom { get; set; }
             public string Prenom { get; set; }
+            public float Age { get; set; }
             public string NumeroTelephone { get; set; }
         }
 
@@ -36,7 +39,7 @@ namespace dentDoc
                 using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
                 {
                     connection.Open();
-                    string sql = "SELECT id_patient, nom, prenom, n_telephone FROM patient";
+                    string sql = "SELECT id_patient, nom, prenom, n_telephone, age FROM patient";
 
                     using (NpgsqlCommand command = new NpgsqlCommand(sql, connection))
                     {
@@ -51,7 +54,8 @@ namespace dentDoc
                                     Id = reader.GetFloat(0),
                                     Nom = reader.GetString(1),
                                     Prenom = reader.GetString(2),
-                                    NumeroTelephone = reader.GetString(3)
+                                    NumeroTelephone = reader.GetString(3),
+                                    Age = reader.GetFloat(4)
                                 });
 
                             }
@@ -67,7 +71,7 @@ namespace dentDoc
             }
         }
 
-
+        // delete patient from patients list
         private void DeletePatient(float patientId)
         {
             using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
@@ -98,11 +102,37 @@ namespace dentDoc
             }
         }
 
-            private void Image_MouseUp(object sender, MouseButtonEventArgs e)
+        // show profile patient from patients list
+
+        public void ShowPatientProfileBtn_Click(object sender, RoutedEventArgs e)
+        {
+            PatientProfil patientProfile = new();
+
+            var selectedPatient = patientsDataGrid.SelectedItem as Patient;
+
+            if (selectedPatient != null)
             {
-                Application.Current.Shutdown();
+                float patientId = selectedPatient.Id;
+                //string nom_patient = selectedPatient.Nom;
+                //string prenom_patient = selectedPatient.Prenom;
+                //float age_patient = selectedPatient.Age;
+
+                
+                patientProfile.ShowPatientProfile(patientId);
+
+                patientProfile.ShowDialog();
 
             }
+
+        }
+
+
+        private void Image_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            Application.Current.Shutdown();
+
+        }
+
 
         private void Min_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
@@ -112,25 +142,25 @@ namespace dentDoc
 
 
         private void AddPatientBtn(object sender, RoutedEventArgs e)
-            {
-                AddPatient addPatient = new();
+        {
+            AddPatient addPatient = new();
 
 
-                addPatient.Show();
-
-
-            }
-            private void PatientProfilBtn(object sender, RoutedEventArgs e)
-            {
-                PatientProfil patientProfil = new();
-
-
-                patientProfil.ShowDialog();
-
-
-            }
-           
+            addPatient.Show();
 
 
         }
-    } 
+        private void PatientProfilBtn(object sender, RoutedEventArgs e)
+        {
+            PatientProfil patientProfil = new();
+
+
+            patientProfil.ShowDialog();
+
+
+        }
+
+
+
+    }
+}   

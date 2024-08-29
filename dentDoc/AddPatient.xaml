@@ -51,8 +51,8 @@
                 <TextBlock Grid.Row="4" Text="Sexe" Style="{StaticResource text}"/>
                 <TextBlock Grid.Row="5" Text="N° téléphone" Style="{StaticResource text}"/>
                 <TextBlock Grid.Row="6" Text="Adresse" Style="{StaticResource text}"/>
-                
-                <TextBox Grid.Row="0" Grid.Column="1" x:Name="txtNom" Style="{StaticResource textboxAddPatient}"/>
+
+                <TextBox Grid.Row="0" Grid.Column="1" x:Name="txtNom"  Text="{Binding Age}" Style="{StaticResource textboxAddPatient}"/>
                 <TextBox Grid.Row="1" Grid.Column="1" x:Name="txtPrenom" Style="{StaticResource textboxAddPatient}"/>
                 <TextBox Grid.Row="2" Grid.Column="1" x:Name="txtAge" Style="{StaticResource textboxAddPatient}" />
                 

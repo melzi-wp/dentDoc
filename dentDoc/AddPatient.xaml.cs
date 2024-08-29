@@ -24,9 +24,10 @@ namespace dentDoc
         {
             
             string connectionString = "Server=localhost;Port=5432;Database=dental_clinic;Username=postgres;Password=123456;";
+
             string Nom = txtNom.Text;
             string Prenom = txtPrenom.Text;
-            string Age = txtAge.Text;
+            int Age = int.Parse(txtAge.Text);
             DateTime? DateNaissance = txtDateNaissance.SelectedDate;
             string Telephone = txtTelephone.Text;
             
@@ -39,7 +40,7 @@ namespace dentDoc
                 string sql = "INSERT INTO patient (nom, prenom, date_de_naissance, n_telephone,age) VALUES (@nom, @prenom,  @date_de_naissance, @n_telephone, @age)";
                 using (NpgsqlCommand command = new NpgsqlCommand(sql, connection))
                 {
-                    if (Nom == "" || Prenom == "" || Age == "")
+                    if (Nom == "" || Prenom == "" )
                     {
                         MessageBox.Show("Entrer les informations de patient");
                     }
@@ -48,7 +49,7 @@ namespace dentDoc
                     {
                         command.Parameters.AddWithValue("@nom", Nom);
                         command.Parameters.AddWithValue("@prenom", Prenom);
-                        command.Parameters.AddWithValue("@nom", Age);
+                        command.Parameters.AddWithValue("@age", Age);
                         command.Parameters.AddWithValue("@nom", Nom);
                         command.Parameters.AddWithValue("@date_de_naissance", DateNaissance);
                         command.Parameters.AddWithValue("@n_telephone", Telephone);

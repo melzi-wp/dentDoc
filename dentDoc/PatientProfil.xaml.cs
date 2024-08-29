@@ -1,16 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Npgsql;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using static dentDoc.MainWindow;
+using static dentDoc.PatientProfil;
 
 namespace dentDoc
 {
@@ -25,7 +17,49 @@ namespace dentDoc
 
 
         }
+        public class PatientProfile
+        {
+            public float Id_p { get; set; }
+            public string Nom_p { get; set; }
+            public string Prenom_p { get; set; }
+            public float Age_p { get; set; }
+            public string NumeroTelephone_p { get; set; }
+        }
 
+        private string connectionString = "Server=localhost;Port=5432;Database=dental_clinic;Username=postgres;Password=123456;";
+
+        public void ShowPatientProfile(float patientId)
+        {
+            using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string sql = "SELECT id_patient, nom, prenom, n_telephone, age FROM patient WHERE id_patient = @patientId";
+                using (NpgsqlCommand command = new NpgsqlCommand(sql, connection))
+                {
+                    using (NpgsqlDataReader reader = command.ExecuteReader())
+                    {
+                        PatientProfile patient = new ();
+
+                        if (reader.Read())
+                        {
+
+                            patient.Id_p = reader.GetFloat(0);
+                            patient.Nom_p = reader.GetString(1);
+                            patient.Prenom_p = reader.GetString(2);
+                            patient.NumeroTelephone_p = reader.GetString(3);
+                            patient.Age_p = reader.GetFloat(4);
+                            
+                            
+                        }
+                    this.DataContext = patient;
+
+                }
+                }
+            }
+        }
+
+        
         private void Image_MouseUp(object sender, MouseButtonEventArgs e)
         {
             

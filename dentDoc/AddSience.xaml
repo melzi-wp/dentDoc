@@ -54,13 +54,13 @@
 
                 <Border Grid.Row="1" Grid.Column="1" CornerRadius="20" Background="White" Width="200" Height="35" 
                         Margin="10 10 0 10" BorderBrush="#e0e6ed" BorderThickness="1" >
-                    <DatePicker  SelectedDate="01/01/2010" Padding="30 8 40 0" 
+                    <DatePicker  x:Name="txtDate" SelectedDate="01/01/2010" Padding="30 8 40 0" 
                                  BorderBrush="Transparent" Background="Transparent" />
 
                 </Border>
                 <Border Grid.Row="2" Grid.Column="1" CornerRadius="20" Background="White" Width="200" Height="35" 
                         Margin="10 10 0 10" BorderBrush="#e0e6ed" BorderThickness="1">
-                <DatePicker Grid.Row="2" Grid.Column="1"  SelectedDate="01/01/2010" Padding="30 8 40 0" 
+                    <DatePicker x:Name="txtHeure"  SelectedDate="01/01/2010" Padding="30 8 40 0" 
                             BorderBrush="Transparent" Background="Transparent"/>
                 </Border>
 
@@ -77,7 +77,7 @@
                         <TextBlock Text="Annuler"/>
                     </StackPanel>
                 </Button>
-                <Button Style="{StaticResource ButtonSave}">
+                <Button Click="SaveSienceBtn" Style="{StaticResource ButtonSave}">
                     <StackPanel Orientation="Horizontal">
                         <Icon:PackIconMaterial Kind="ContentSave" Foreground="#5ce65c" Style="{StaticResource ButtonAddIcon}"/>
                         <TextBlock Text="Enregistrer"/>

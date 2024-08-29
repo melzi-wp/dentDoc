@@ -28,7 +28,8 @@
             <Border  Padding="15" Margin="10 30 10 0"
                     Background="#4895ef" CornerRadius="15"  >
 
-                <Grid>
+                <Grid x:Name="PatientProfilGrid">
+                    
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                         <Border Width="60" Height="60" Margin="15 0 15 0" CornerRadius="30">
                             <Border.Background>
@@ -38,8 +39,12 @@
                         </Border>
                                 
                         <StackPanel Orientation="Vertical" VerticalAlignment="Center">
-                            <TextBlock Text="Nom Prenom" FontSize="14" Foreground="#FFF5E4"/>
-                            <TextBlock Text="Age" FontSize="14" Foreground="LightGray"/>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Nom}"  FontSize="14" Foreground="#FFF5E4"/>
+                                <TextBlock Text="{Binding Prenom}" FontSize="14" Foreground="#FFF5E4"/>
+                            </StackPanel>
+                            <TextBlock Text="{Binding Age}" FontSize="14" Foreground="LightGray"/>
+                            <TextBlock Text="{Binding NumeroTelephone}" FontSize="14" Foreground="LightGray"/>
                         </StackPanel>
                         
                     </StackPanel>
@@ -50,6 +55,7 @@
                         </Border>
 
                     </StackPanel>
+                    
                     
                 </Grid>
                 
